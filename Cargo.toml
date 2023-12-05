@@ -1,0 +1,21 @@
+[workspace]
+members = ["packages/iac", "packages/macros", "packages/types"]
+resolver = "2"
+
+[package]
+name = "iac-examples"
+version = "0.0.0"
+authors = ["Jonathan Kelley"]
+edition = "2021"
+description = "Top level crate for the Dioxus repository"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/DioxusLabs/dioxus/"
+homepage = "https://dioxuslabs.com"
+documentation = "https://dioxuslabs.com"
+keywords = ["dom", "ui", "gui", "react", "wasm"]
+rust-version = "1.60.0"
+publish = false
+
+
+[dependencies]
+iac-macros = { path = "packages/iac" }

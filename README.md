@@ -2,6 +2,29 @@
 
 translate rust structs to terraform at compile time
 
+```rust
+// your infra is a macro
+static DB: Postgres = Postgres16! {
+    host: "env.host",
+    password: "env.password",
+    database: "todos",
+    user: "localhost",
+    port: 5432
+};
+
+// your entites are structs
+#[derive(Table)]
+struct User {
+    id: Id<Self>,
+    name: String
+}
+
+// and you can use them wherever
+async fn main() {
+    let users = User::list_all().await;
+}
+```
+
 ## wait what
 
 why would you do this??
